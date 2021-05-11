@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+
+*  {
+  box-sizing: border-box;
+}
+
+body {
+  /*background-image: url('./images/bg-pattern-desktop.svg'); for media query*/ 
+  background-image: linear-gradient(135deg hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  background-size: cover;
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+
+}
+
+.logo-img {
+  padding: 1.2rem 2rem;
+  width: 40%;
+}
+
+
+.bg-image {
+  background-image: url('./images/hero-mobile.jpg');
+  height: 40vh;
+  background-size: cover;
+}
+
+
+h1 {
+  /*font-size: 3.75rem; media query desktop*/
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.625rem;
+  line-height: 1;
+  color: hsl(0, 6%, 24%);
+  animation: comeinleft 0.5s ease forwards;
+  transform: translateX(-100%);
+}
+
+
+h1 span {
+  color: hsl(0, 36%, 70%);
+  font-weight: 300;
+}
+
+p {
+  color: hsl(0, 36%, 70%);
+  text-align: center;
+  line-height: 1.6;
+  font-size: 	0.875rem;
+  margin-bottom: 2rem;
+  transform: translateX(100%);
+  opacity: 0;
+  animation: comeinright 0.5s ease forwards;
+}
+
+.bottom {
+  padding: 1rem 2rem;
+}
+
+
+form {
+  position: relative;
+  margin-bottom: 3rem;
+  animation: comeinleft 0.5s ease forwards;
+  transform: translateX(-100%);
+}
+
+input {
+  background-color: transparent;
+  border: 1px solid hsl(0, 80%, 86%);
+  border-radius: 50px;
+  font-size: 1rem;
+  padding: 15px 20px;
+  height: 50px;
+  width: 100%;
+}
+
+input:focus {
+  border-width: 2px;
+  outline: none;
+  box-shadow: 0px 0px 10px hsl(0deg 36% 70% / 50%);
+}
+
+::placeholder {
+  color:hsl(0, 36%, 70%);
+  opacity: 0.4;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 	0.875rem;
+}
+
+form.error input {
+  border: 2px solid hsl(0, 93%, 68%);
+}
+
+form.success input {
+border: 2px solid hsl(0,36%,70%);
+}
+
+
+button {
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  box-shadow: 2px 5px 10px hsl(0deg 36% 70% / 50%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: opacity 0.2s ease;
+  height: 50px;
+  width: 60px;
+}
+
+
+button:hover {
+  opacity: 0.5;
+}
+
+.error-icon {
+  display: none;
+  position: absolute;
+  top: 13px;
+  right: 70px;
+}
+
+form.error .error-icon {
+  display: block;
+}
+
+small {
+  color:  hsl(0, 93%, 68%);
+  display: none;
+  margin-top: 1rem;
+  margin-left: 1.25rem;
+}
+
+form.error small {
+  display: block;
+}
+
+/*ANIMATIONS*/
+
+@keyframes comeinleft {
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes comeinright {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/*MEDIA QUERIES*/
+
+@media screen and (min-width: 1024px) {
+  body {
+    background-image: url('./images/bg-pattern-desktop.svg');
+    background-position: center;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    grid-column-gap: 30px;
+    grid-template-rows: 100px;
+    min-height: 100vh;
+  }
+
+  h1 {
+    font-size: 3.75rem;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  p {
+    text-align: left;
+    margin-top: 0;
+    line-height: 2;
+  }
+
+  .logo-img {
+    padding: 4rem;
+    width: 50%;
+  }
+
+  .bottom {
+    margin: 20px 30px;
+  }
+
+  input {
+    height: 60px;
+    width: 100%;
+  }
+  
+  button {
+    height: 60px;
+    width: 100px;
+  }
+
+  .bg-image {
+      background-image: url('./images/hero-desktop.jpg');
+      min-height: 100vh;
+      background-size: cover;
+  }
+  
+}
+
+@media screen and (min-width: 1440px){
+
+  .bottom {
+    width: 70%;
+    margin-left: 5rem;
+  }
+
+  .logo-img {
+    width: 40%;
+    padding-left: 7rem;
+  }
+
+  h1 {
+    margin-top: 80px;
+    padding: 0;
+  }
+
+}
